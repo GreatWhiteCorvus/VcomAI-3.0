@@ -657,7 +657,7 @@ class FSM
                          "" \n
                          "private _NearestEnemy = _leader call VCM_fnc_ClstEmy;	" \n
                          "" \n
-                         "private _NearestFriendly2Enemy = _NearestEnemy call VCM_fnc_ClstEmy;	" \n
+                         "private _NearestFriendly2Enemy = if (_NearestEnemy isEqualType []) then { objNull } else { (_NearestEnemy call VCM_fnc_ClstEmy) };	" \n
                          "private _PredictedLoc = (_NearestFriendly2Enemy targetKnowledge (vehicle _NearestEnemy)) select 6;" \n
                          "private _LocAccuracy = _NearestEnemy distance2d _PredictedLoc;" \n
                          "" \n
